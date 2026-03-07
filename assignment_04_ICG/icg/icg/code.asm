@@ -1,0 +1,86 @@
+.MODEL SMALL
+.STACK 1000H
+.Data
+	number DB "00000$"
+	w DW 10 DUP (0000H)
+.CODE
+main PROC
+	MOV AX, @DATA
+	MOV DS, AX
+	PUSH BP
+	MOV BP, SP
+	SUB SP, 2
+L1:
+	SUB SP, 20
+L2:
+	MOV AX, 0       ; Line 6
+	PUSH AX
+	MOV AX, 2       ; Line 6
+	NEG AX
+	PUSH AX
+	POP AX       ; Line 6
+	POP BX
+	PUSH AX
+	MOV AX, 2
+	MUL BX
+	MOV BX, AX
+	POP AX
+	MOV w[BX], AX
+	PUSH AX
+	POP AX
+L3:
+	MOV AX, 0       ; Line 7
+	PUSH AX
+	MOV AX, 0       ; Line 7
+	PUSH AX
+	POP BX
+	MOV AX, 2       ; Line 7
+	MUL BX
+	MOV BX, AX
+	MOV AX, w[BX]
+	POP BX
+	PUSH AX
+	MOV AX, 2
+	MUL BX
+	MOV BX, AX
+	MOV AX, 22
+	SUB AX, BX
+	MOV BX, AX
+	POP AX
+	MOV SI, BX
+	NEG SI
+	MOV [BP+SI], AX
+	PUSH AX
+	POP AX
+L4:
+	MOV AX, 0       ; Line 8
+	PUSH AX
+	POP BX
+	MOV AX, 2       ; Line 8
+	MUL BX
+	MOV BX, AX
+	MOV AX, 22
+	SUB AX, BX
+	MOV BX, AX
+	MOV SI, BX
+	NEG SI
+	MOV AX, [BP+SI]
+	MOV [BP-2], AX
+	PUSH AX
+	POP AX
+L5:
+	MOV AX, [BP-2]       ; Line 9
+	CALL print_output
+	CALL new_line
+L6:
+L7:
+	ADD SP, 22
+	POP BP
+	MOV AX,4CH
+	INT 21H
+main ENDP
+;-------------------------------
+;         print library         
+;-------------------------------
+;-------------------------------
+END main

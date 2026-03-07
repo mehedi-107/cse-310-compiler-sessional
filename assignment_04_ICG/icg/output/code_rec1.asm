@@ -1,0 +1,198 @@
+.MODEL SMALL
+.STACK 1000H
+.DATA
+	number DB "00000$"
+.CODE
+main PROC
+	MOV AX, @DATA
+	MOV DS, AX
+	PUSH BP
+	MOV BP, SP
+	SUB SP, 2
+	SUB SP, 2
+	SUB SP, 6
+L2:
+	MOV AX, 1		; line 3
+	PUSH AX
+L3:
+	MOV AX, 2		; line 3
+	PUSH AX
+L4:
+	MOV AX, 3		; line 3
+	PUSH AX
+L5:
+	POP AX
+	MOV DX, AX
+	POP AX
+	ADD AX, DX
+	PUSH AX		; line 3
+L6:
+	POP AX
+	MOV CX, AX
+	POP AX
+	CWD
+	MUL CX
+	PUSH AX		; line 3
+L7:
+	MOV AX, 3		; line 3
+	PUSH AX
+L8:
+	POP AX
+	MOV CX, AX
+	POP AX
+	CWD
+	DIV CX
+	PUSH DX		; line 3
+	POP AX
+	MOV [BP-2], AX
+L9:
+	MOV AX, 1		; line 4
+	PUSH AX
+L10:
+	MOV AX, 5		; line 4
+	PUSH AX
+L11:
+	POP AX
+	MOV DX, AX
+	POP AX
+	CMP AX, DX
+	JL L12		; line 4
+	JMP L13		; line 4
+L12:
+	MOV AX, 1		; line 4
+	JMP L14		; line 4
+L13:
+	MOV AX, 0		; line 4
+L14:
+	PUSH AX		; line 4
+	POP AX
+	MOV [BP-4], AX
+L15:
+	MOV AX, 0		; line 5
+	PUSH AX
+L16:
+	MOV AX, 2		; line 5
+	PUSH AX
+	POP AX
+	POP BX
+	PUSH AX
+	MOV AX, 2
+	MUL BX
+	MOV BX, AX
+	MOV AX, 10
+	SUB AX, BX
+	MOV BX, AX
+	POP AX
+	MOV SI, BX
+	NEG SI
+	MOV [BP + SI], AX
+L17:
+	MOV AX, [BP-2]		; line 6
+	PUSH AX		; line 6
+L18:
+	POP AX		; line 6
+	CMP AX, 0
+	JE L19		; line 6
+L20:
+	MOV AX, [BP-4]		; line 6
+	PUSH AX		; line 6
+	POP AX
+	CMP AX, 0
+	JE L19		; line 6
+L21:
+	MOV AX, 1
+	JMP L22		; line 6
+L19:
+	MOV AX, 0		; line 6
+L22:
+	PUSH AX		; line 6
+L23:
+	MOV AX, 0		; line 6
+	PUSH AX
+L24:
+	POP BX
+	MOV AX, 2
+	MUL BX
+	MOV BX, AX
+	MOV AX, 10
+	SUB AX, BX
+	MOV BX, AX
+	MOV SI, BX
+	NEG SI
+	MOV AX, [BP + SI]
+	PUSH AX
+L25:
+	MOV AX, 0		; line 7
+	PUSH AX
+L26:
+	POP BX
+	MOV AX, 2
+	MUL BX
+	MOV BX, AX
+	MOV AX, 10
+	SUB AX, BX
+	MOV BX, AX
+	MOV SI, BX
+	NEG SI
+	MOV AX, [BP + SI]
+	PUSH AX
+	INC AX
+	MOV [BP + SI], AX
+L1:
+	MOV SP, BP
+	POP BP
+	MOV AX, 4CH
+	INT 21H
+main ENDP
+new_line proc
+	push ax
+	push dx
+	mov ah,2
+	mov dl,0Dh
+	int 21h
+	mov ah,2
+	mov dl,0Ah
+	int 21h
+	pop dx
+	pop ax
+	ret
+new_line endp
+print_output proc  ;print what is in ax
+	push ax
+	push bx
+	push cx
+	push dx
+	push si
+	lea si,number
+	mov bx,10
+	add si,4
+	cmp ax,0
+	jnge negate
+print:
+	xor dx,dx
+	div bx
+	mov [si],dl
+	add [si],'0'
+	dec si
+	cmp ax,0
+	jne print
+	inc si
+	lea dx,si
+	mov ah,9
+	int 21h
+	pop si
+	pop dx
+	pop cx
+	pop bx
+	pop ax
+	ret
+negate:
+	push ax
+	mov ah,2
+	mov dl,'-'
+	int 21h
+	pop ax
+	neg ax
+	jmp print
+print_output endp
+END main

@@ -1,0 +1,4 @@
+Line# 9: Syntax error at expression of expression statement
+Line# 12: Syntax error at expression of expression statement
+Line# 15: Syntax error at expression of expression statement
+Line# 17: Syntax error at expression of expression statement

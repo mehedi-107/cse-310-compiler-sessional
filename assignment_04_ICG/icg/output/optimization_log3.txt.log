@@ -1,0 +1,75 @@
+[Line 17: Redundant consecutive PUSH/POP of same register]
+	PUSH AX
+
+[Line 18: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 38: Redundant consecutive PUSH/POP of same register]
+	PUSH AX		; line 5
+
+[Line 39: Redundant consecutive PUSH/POP of same register]
+	POP AX		; line 5
+
+[Line 57: Redundant consecutive PUSH/POP of same register]
+	PUSH AX
+
+[Line 58: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 60: Redundant consecutive PUSH/POP of same register]
+	PUSH AX
+
+[Line 61: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 81: Redundant consecutive PUSH/POP of same register]
+	PUSH AX		; line 11
+
+[Line 82: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 94: Redundant consecutive PUSH/POP of same register]
+	PUSH AX		; line 12
+
+[Line 95: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 112: Redundant consecutive PUSH/POP of same register]
+	PUSH AX
+
+[Line 113: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 115: Redundant consecutive PUSH/POP of same register]
+	PUSH AX
+
+[Line 116: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 136: Redundant consecutive PUSH/POP of same register]
+	PUSH AX		; line 23
+
+[Line 137: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 19: Redundant consecutive label (mapped to L3)]
+L4:
+
+[Line 47: Redundant consecutive label (mapped to L11)]
+L13:
+
+[Line 53: Redundant consecutive label (mapped to L10)]
+L15:
+
+[Line 59: Redundant consecutive label (mapped to L17)]
+L18:
+
+[Line 98: Redundant consecutive label (mapped to L24)]
+L29:
+
+[Line 112: Redundant consecutive label (mapped to L33)]
+L34:
+
+[Line 133: Redundant consecutive label (mapped to L35)]
+L39:
+

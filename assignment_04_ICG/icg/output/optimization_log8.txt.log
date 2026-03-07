@@ -1,0 +1,21 @@
+[Line 137: Redundant consecutive PUSH/POP of same register]
+	PUSH AX
+
+[Line 138: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 140: Redundant consecutive PUSH/POP of same register]
+	PUSH AX
+
+[Line 141: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 149: Redundant consecutive PUSH/POP of same register]
+	PUSH AX		; line 14
+
+[Line 150: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 49: Redundant consecutive label (mapped to L11)]
+L14:
+

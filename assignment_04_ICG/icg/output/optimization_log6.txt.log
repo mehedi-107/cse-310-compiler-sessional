@@ -1,0 +1,90 @@
+[Line 23: Redundant consecutive PUSH/POP of same register]
+	PUSH AX		; line 6
+
+[Line 24: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 42: Redundant consecutive PUSH/POP of same register]
+	PUSH AX
+
+[Line 43: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 68: Redundant consecutive PUSH/POP of same register]
+	PUSH AX
+
+[Line 69: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 115: Redundant consecutive PUSH/POP of same register]
+	PUSH AX
+
+[Line 116: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 129: Redundant consecutive PUSH/POP of same register]
+	PUSH AX
+
+[Line 130: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 145: Redundant consecutive PUSH/POP of same register]
+	PUSH AX		; line 16
+
+[Line 146: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 157: Redundant consecutive PUSH/POP of same register]
+	PUSH AX		; line 17
+
+[Line 158: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 170: Redundant consecutive PUSH/POP of same register]
+	PUSH AX		; line 18
+
+[Line 171: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 218: Redundant consecutive PUSH/POP of same register]
+	PUSH AX		; line 21
+
+[Line 219: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 278: Redundant consecutive PUSH/POP of same register]
+	PUSH AX		; line 21
+
+[Line 279: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 286: Redundant consecutive PUSH/POP of same register]
+	PUSH AX		; line 21
+
+[Line 287: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 294: Redundant consecutive PUSH/POP of same register]
+	PUSH AX		; line 21
+
+[Line 295: Redundant consecutive PUSH/POP of same register]
+	POP AX		; line 21
+
+[Line 298: Redundant consecutive PUSH/POP of same register]
+	PUSH AX
+
+[Line 299: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 303: Redundant consecutive PUSH/POP of same register]
+	PUSH AX
+
+[Line 304: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 301: Redundant consecutive label (mapped to L67)]
+L70:
+
+[Line 304: Redundant consecutive label (mapped to L69)]
+L71:
+

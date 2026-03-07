@@ -1,0 +1,60 @@
+[Line 21: Redundant consecutive PUSH/POP of same register]
+	PUSH AX
+
+[Line 22: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 37: Redundant consecutive PUSH/POP of same register]
+	PUSH AX		; line 9
+
+[Line 38: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 63: Redundant consecutive PUSH/POP of same register]
+	PUSH AX		; line 12
+
+[Line 64: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 106: Redundant consecutive PUSH/POP of same register]
+	PUSH AX		; line 18
+
+[Line 107: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 130: Redundant consecutive PUSH/POP of same register]
+	PUSH AX		; line 21
+
+[Line 131: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 144: Redundant consecutive PUSH/POP of same register]
+	PUSH AX		; line 24
+
+[Line 145: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 152: Redundant consecutive PUSH/POP of same register]
+	PUSH AX		; line 24
+
+[Line 153: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 166: Redundant consecutive PUSH/POP of same register]
+	PUSH AX		; line 27
+
+[Line 167: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 174: Redundant consecutive PUSH/POP of same register]
+	PUSH AX		; line 27
+
+[Line 175: Redundant consecutive PUSH/POP of same register]
+	POP AX
+
+[Line 194: Redundant consecutive PUSH/POP of same register]
+	PUSH AX		; line 33
+
+[Line 195: Redundant consecutive PUSH/POP of same register]
+	POP AX
+

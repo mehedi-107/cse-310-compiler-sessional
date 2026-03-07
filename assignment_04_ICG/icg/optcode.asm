@@ -1,0 +1,71 @@
+.MODEL SMALL
+.STACK 1000H
+.Data
+	number DB "00000$"
+.CODE
+main PROC
+	MOV AX, @DATA
+	MOV DS, AX
+	PUSH BP
+	MOV BP, SP
+	SUB SP, 2
+	SUB SP, 2
+	SUB SP, 2
+	SUB SP, 2
+L1:
+	MOV AX, 8       ; Line 4
+	MOV [BP-2], AX
+L2:
+	MOV AX, 3       ; Line 5
+	MOV [BP-4], AX
+L3:
+	MOV AX, [BP-4]       ; Line 7
+	MOV CX, AX
+	MOV AX, [BP-2]       ; Line 7
+	CWD
+	DIV CX
+	PUSH AX
+	POP AX       ; Line 7
+	MOV [BP-6], AX
+L4:
+	MOV AX, [BP-4]       ; Line 8
+	MOV DX, AX
+	MOV AX, [BP-2]       ; Line 8
+	ADD AX, DX
+	PUSH AX
+	MOV AX, 2       ; Line 8
+	MOV CX, AX
+	POP AX       ; Line 8
+	CWD
+	DIV CX
+	PUSH AX
+	POP AX       ; Line 8
+	MOV [BP-8], AX
+L5:
+L6:
+	POP AX
+	CMP AX, 0
+	JNE TL1
+	JMP TL2
+L7:
+	POP AX
+	CMP AX, 0
+	JNE TL3
+	JMP TL4
+L8:
+	POP AX
+	CMP AX, 0
+	JNE TL5
+	JMP TL6
+L9:
+	POP AX
+	CMP AX, 0
+	JNE TL7
+	JMP TL8
+L10:
+	POP AX
+	CMP AX, 0
+	JNE TL9
+	JMP TL10
+L11:
+END main

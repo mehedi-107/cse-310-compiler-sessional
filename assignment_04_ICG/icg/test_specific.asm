@@ -1,0 +1,4 @@
+ADD AX, DX
+PUSH AX		; line 9
+POP AX
+MOV j, AX
